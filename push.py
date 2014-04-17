@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import struct
 from binascii import a2b_hex
@@ -39,7 +40,7 @@ if not os.path.exists(PUSH_CERT):
   print >>sys.stderr, 'Missing cert file %s' % PUSH_CERT
   sys.exit(1)
 
-payload = '{"aps":{"alert":"Broadcasting direct to apple with p12"}}'
+payload = '{"aps":{"alert":"Broadcasting direct to apple with p12, 中文"}}'
 fmt = '!BH32sH%ds' % len(payload)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
